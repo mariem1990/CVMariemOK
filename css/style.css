@@ -1,0 +1,65 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+h1{
+    color:black;
+    text-align: center;
+    background-color: #fd6d6d;
+    
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height: 100vh;
+    background-image: url("../img/mariem.jpg");
+    background-size: cover;
+  background-repeat: no-repeat;
+}
+.acordeon{
+    max-width:800px;
+}
+.acordeon .caja{
+    position:relative;
+    margin:10px 20px;
+}
+.acordeon .caja .etiqueta{
+    position:relative;
+    padding:10px;
+    background-color:#fd6d6d;
+    color:black;
+    cursor: pointer;
+    font-weight:bold;
+}
+
+.acordeon .caja .etiqueta::before{
+    content:'+';
+    position:absolute;
+    top:50%;
+    right:20px;
+    transform:translateY(-50%);
+    font-size: 1.5em;
+}
+.acordeon .caja.active .etiqueta::before{
+    content:"-";
+
+}
+.acordeon .caja .contenido{
+position:relative;
+
+background:white;
+height:0;
+overflow:hidden;
+transition: 0.5s;
+overflow-y:auto;
+opacity:0.7;
+}
+
+.acordeon .caja.active .contenido{
+height:150px;
+padding:10px;
+}
